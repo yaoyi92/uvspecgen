@@ -1,3 +1,5 @@
+It's a fork from https://urania.chem.washington.edu/sunsc/uvspecgen. 
+
 uvspecgen
 =========
 
