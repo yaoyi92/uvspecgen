@@ -341,8 +341,8 @@ class AbsorptionSpectrum(object):
             outfile.write(' '.join(current_line))
         
         outfile.close()
-        print (' Spectrum generation complete: output written to %s'
-               % self.outfile)
+        print((' Spectrum generation complete: output written to %s'
+               % self.outfile))
     
     def plot(self):
         """Visualize a plot of the line shape function.
@@ -436,13 +436,13 @@ class AbsorptionSpectrum(object):
         for logfile in logfiles:
             _logfile = Logfile(logfile)
             _logfile.parse()
-            _esdata.extend(zip(_logfile.excited_state_energy,
-                               _logfile.oscillator_strength))
+            _esdata.extend(list(zip(_logfile.excited_state_energy,
+                               _logfile.oscillator_strength)))
         # The Python built-in function ``set()`` removes all duplicate
         # energy-strength pairs from the ``_esdata`` list.
         _esdata = list(set(_esdata))
         _esdata.sort()
-        energy, strength = zip(*_esdata)
+        energy, strength = list(zip(*_esdata))
         return energy, strength
 
 
